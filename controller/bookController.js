@@ -6,7 +6,7 @@ const { BookModal } = require("../modal/bookModal");
 // here creating book and saving into database
 const addbook = async (req, res) => {
   const {title,author,publication_year,userId}=req.body
-  if (!title || !author || !publication_year || !userId) {
+  if (!title || !author || !publication_year) {
     return res.status(400).json({ message: 'Missing required fields' });
   }  
   try {
@@ -48,8 +48,12 @@ const updatebook=async(req,res)=>{
     const payload = req.body;
   
     const book=await BookModal.findOne({"_id":Id})
-   const userId_in_book=book.userId
-   const userId_making_request=req.body.userId
+    const userId_in_book = book ? book.userId.toString() : null; // Convert to string or whatever type it is
+    const userId_making_request = req.body.userId.toString(); // Convert to string or whatever type it is
+    
+    console.log(userId_in_book);
+    console.log(userId_making_request);
+    
     try {
       if (userId_making_request!==userId_in_book) {
         res.status(400).json({ message: "You are not authorized" });
@@ -69,8 +73,11 @@ const deletbook=async(req,res)=>{
   const Id=req.params.id
 
   const book=await BookModal.findOne({"_id":Id})
-  const userId_in_book=book.userId
-  const userId_making_request=req.body.userId
+  const userId_in_book = book ? book.userId.toString() : null; 
+  const userId_making_request = req.body.userId.toString(); 
+  console.log(userId_in_book);
+  console.log(userId_making_request);
+  
 
   try {
     if (userId_making_request!==userId_in_book) {

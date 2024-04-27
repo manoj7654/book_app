@@ -5,7 +5,7 @@ const bookRouter=express.Router()
 
 
 // for add book
-bookRouter.post("/add",addbook)
+bookRouter.post("/add",authenticate,addbook)
 
 // for getting all book
 bookRouter.get("/allbook",getbook)
