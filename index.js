@@ -235,9 +235,7 @@ const options = {
  *         description: Internal server error
  */
 
-app.use("/",(req,res)=>{
-    res.send("Welcom to the Book Management API Home Page.")
-})
+
 app.use("/users",userRouter)
 app.use("/books",bookRouter)
 
