@@ -2,11 +2,12 @@ const express=require("express");
 const { connection } = require("./config/db");
 const { userRouter } = require("./routes/userRouter");
 const { bookRouter } = require("./routes/bookRouter");
-
+const cors=require("cors")
 const swaggerJsDoc=require("swagger-jsdoc");
 const swaggerUi=require("swagger-ui-express");
 const app=express();
 require("dotenv").config();
+app.use(cors())
 app.use(express.json())
 
 
