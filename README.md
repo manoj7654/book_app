@@ -181,3 +181,9 @@ Headers:
             {
             "message": "Please login again"
             }
+
+### Deployed Link
+ [Live](https://book-app-1-fgeo.onrender.com/)
+
+ ### Swagger Link
+ [Swagger](https://book-app-1-fgeo.onrender.com/api-docs)
