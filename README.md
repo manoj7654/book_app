@@ -25,11 +25,11 @@
 
 - Create a .env file in the root directory:
 
-        PORT=3000
-        mongoUrl=mongodb://localhost:27017/bookDB
+        PORT=port no 
+        mongoUrl=mongoUrl
         key=your_secret_key
 
-- PORT: Port number for the server (default: 3000).
+- PORT: Port number for the server .
 - mongoUrl: MongoDB connection URL.
 - key: Secret key for JWT token generation.
 

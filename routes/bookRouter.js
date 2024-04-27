@@ -5,10 +5,10 @@ const bookRouter=express.Router()
 
 
 // for add book
-bookRouter.post("/add",authenticate,addbook)
+bookRouter.post("/add",addbook)
 
 // for getting all book
-bookRouter.get("/allbook",authenticate,getbook)
+bookRouter.get("/allbook",getbook)
 
 // delete book
 bookRouter.delete("/remove/:id",authenticate,deletbook)

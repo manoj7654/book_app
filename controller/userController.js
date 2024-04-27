@@ -4,6 +4,7 @@ const jwt=require("jsonwebtoken")
 
 require("dotenv").config()
 
+
 const register=async(req,res)=>{
     const {name,email,phone,password}=req.body;
     try {
